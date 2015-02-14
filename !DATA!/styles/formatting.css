@@ -118,12 +118,21 @@ figcaption {
     text-align: right;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h3, h4, h5, h6 {
     text-align: left;
 }
 
 h1 {
     line-height: 72pt;
+}
+
+h2 {
+    text-align: center;
+    line-height: 36pt;
+}
+
+h3::after {
+    content: ":";
 }
 
 hr::after {
