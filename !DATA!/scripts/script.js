@@ -202,7 +202,7 @@ function navWalk(walker) {
         s += walker.currentNode.firstElementChild.textContent;
         console.log(walker.currentNode.firstElementChild.textContent);
         if (walker.currentNode.id) s += '</a>';
-        if (walker.firstChild()); {
+        if (walker.firstChild()) {
             s += navWalk(walker);
             walker.parentNode();
         }
