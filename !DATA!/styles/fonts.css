@@ -31,6 +31,10 @@ dt {
     font-weight: inherit;
 }
 
+dd::before {
+    font-weight: 100;
+}
+
 /*  BLOCK ELEMENTS  */
 
 blockquote, figcaption, h1 {
