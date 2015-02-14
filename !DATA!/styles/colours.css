@@ -48,8 +48,8 @@ hr {
     background: none;
 }
 
-p + p::before {
-    color: #828282;
+p::before {
+    color: #cccccc;
 }
 
 /*  PHRASING  */
@@ -64,5 +64,5 @@ a[href] {
 }
 
 a[href]:hover {
-    background: #a3a3a3;
+    background: #cccccc;
 }
