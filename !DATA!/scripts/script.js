@@ -200,7 +200,6 @@ function navWalk(walker) {
         s += "<li>";
         if (walker.currentNode.id) s += '<a href="#' + walker.currentNode.id + '">';
         s += walker.currentNode.firstElementChild.textContent;
-        console.log(walker.currentNode.firstElementChild.textContent);
         if (walker.currentNode.id) s += '</a>';
         if (walker.firstChild()) {
             s += navWalk(walker);

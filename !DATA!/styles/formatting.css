@@ -38,7 +38,7 @@
 
 /*  SECTIONING  */
 
-body > nav, footer {
+footer {
     text-align: right;
 }
 
