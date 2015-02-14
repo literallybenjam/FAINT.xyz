@@ -186,9 +186,16 @@ a[href] {
 }
 
 @media print {
+
+    a[href] {
+        border: none;
+        text-decoration: none;
+    }
+
     a[href]::after {
         content: " [" attr(href) "]";
     }
+
 }
 
 header a[href], nav a[href] {
