@@ -7,7 +7,7 @@ html {
 
 body {
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 180pt;
     width: calc(100% - 180pt);
 }
 
@@ -51,7 +51,7 @@ body > nav {
 
 ul, ol, dl {
     margin: 0;
-    padding: 0 0 0 30pt;
+    padding: 0 0 0 20pt;
 }
 
 :not(li) > ul:only-child, :not(li) > ol:only-child, :not(li) > dl:only-child,
@@ -68,7 +68,7 @@ dt {
 }
 
 dd {
-    margin: 0 0 0 30pt;
+    margin: 0 0 0 20pt;
     padding: 0;
 }
 
