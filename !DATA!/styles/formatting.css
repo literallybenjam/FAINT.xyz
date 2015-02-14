@@ -185,7 +185,7 @@ a[href] {
 
 }
 
-nav a[href] {
+header a[href], nav a[href] {
     border: none;
     text-decoration: none;
 }
