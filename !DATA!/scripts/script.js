@@ -212,7 +212,7 @@ function navWalk(walker) {
 }
 
 function navInit() {
-    var walker = document.createTreeWalker(document.getElementsByTagName("MAIN").item(0), NodeFilter.SHOW_ELEMENT, function(node) {if (node.nodeName.toUpperCase() === "SECTION") return NodeFilter.ACCEPT_NODE; else return NodeFilter.REJECT_NODE;});
+    var walker = document.createTreeWalker(document.getElementsByTagName("MAIN").item(0), NodeFilter.SHOW_ELEMENT, function(node) {if (node.nodeName.toUpperCase() === "SECTION") return NodeFilter.FILTER_ACCEPT; else return NodeFilter.FILTER_SKIP;});
     var nav = document.createElement("NAV");
     nav.innerHTML = navWalk(walker);
     document.body.appendChild(nav);
@@ -234,6 +234,7 @@ function init() {
         hashLinks.item(i).addEventListener("click", navHashFromLink, false);
     }
     navHashFromLocation();
+    navInit();
 }
 
 document.addEventListener("DOMContentLoaded", init, false);
