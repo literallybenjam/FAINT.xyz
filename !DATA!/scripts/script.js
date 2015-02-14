@@ -213,6 +213,7 @@ function navWalk(walker) {
 
 function navInit() {
     var walker = document.createTreeWalker(document.getElementsByTagName("MAIN").item(0), NodeFilter.SHOW_ELEMENT, function(node) {if (node.nodeName.toUpperCase() === "SECTION") return NodeFilter.FILTER_ACCEPT; else return NodeFilter.FILTER_SKIP;});
+    walker.firstChild();
     var nav = document.createElement("NAV");
     nav.innerHTML = navWalk(walker);
     document.body.appendChild(nav);
