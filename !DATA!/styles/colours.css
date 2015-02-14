@@ -1,0 +1,32 @@
+/*  PRE-CSS4 SELECTION RULES  */
+
+*::selection {
+    background: #d6dae0;
+}
+*::-moz-selection {
+    background: #d6dae0;
+}
+mark::selection, mark *::selection {
+    background: #a6acb1;
+}
+mark::-moz-selection, mark *::-moz-selection {
+    background: #a6acb1;
+}
+
+/*  :ROOT ELEMENT  */
+
+*:root {
+    color: #7b7f85;
+}
+
+/*  PAGE LAYOUT  */
+
+/*  SECTIONING  */
+
+/*  TABLES  */
+
+/*  LISTS  */
+
+/*  BLOCK ELEMENTS  */
+
+/*  PHRASING  */

@@ -1,0 +1,29 @@
+/*  GLOBAL RULES  */
+
+*[title]:not([title=""]):not(a) {
+    cursor: help;
+    border-bottom: dotted currentColor black;
+}
+*:lang(en) {
+    quotes: "“" "”" "‘" "’";
+}
+
+/*  :ROOT ELEMENT */
+
+*:root {
+    line-height: 1.5pc;
+    text-align: justify;
+    quotes: "“" "”" "‘" "’";
+}
+
+/*  PAGE LAYOUT  */
+
+/*  SECTIONING  */
+
+/*  TABLES  */
+
+/*  LISTS  */
+
+/*  BLOCK ELEMENTS  */
+
+/*  PHRASING  */

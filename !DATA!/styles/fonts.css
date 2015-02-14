@@ -1,0 +1,10 @@
+/*  @RULES  */
+
+/* :ROOT ELEMENT */
+
+*:root {
+    font-family: "Lato", "Helvetica Neue", sans-serif;
+    font-size: 1.25pc;
+    font-synthesis: none;
+    font-weight: 300;
+}

@@ -1,41 +1,9 @@
 /* @RULES */
 
-/*  GLOBAL RULES  */
-
-*[title]:not([title=""]):not(a) {
-    cursor: help;
-    border-bottom: dotted currentColor black;
-}
-*:lang(en) {
-    quotes: "“" "”" "‘" "’";
-}
-
-/*  PRE-CSS4 SELECTION RULES  */
-*::selection {
-    background: #d6dae0;
-}
-*::-moz-selection {
-    background: #d6dae0;
-}
-mark::selection, mark *::selection {
-    background: #a6acb1;
-}
-mark::-moz-selection, mark *::-moz-selection {
-    background: #a6acb1;
-}
-
-/* :ROOT ELEMENT */
-
-*:root {
-    color: #7b7f85;
-    font-family: "Lato", "Helvetica Neue", sans-serif;
-    font-size: 1.25pc;
-    font-synthesis: none;
-    font-weight: 300;
-    line-height: 1.5pc;
-    text-align: justify;
-    quotes: "“" "”" "‘" "’";
-}
+@import url(layout.css);
+@import url(fonts.css);
+@import url(formatting.css);
+@import url(colours.css);
 
 /* PAGE LAYOUT */
 
