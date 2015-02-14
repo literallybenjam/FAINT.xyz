@@ -146,16 +146,19 @@ h1 {
 h2 {
     position: relative;
     margin: 18pt auto;
+    width: fill-content;
+    width: -moz-fill-content;
 }
 
 h2::before {
     display: block;
     position: absolute;
     top: 50%;
-    left: 100%;
-    right: 100%;
+    left: 0;
+    right: 0;
     border-bottom: thin solid;
     height: 0;
+    z-index: -1;
 }
 
 h3 {
