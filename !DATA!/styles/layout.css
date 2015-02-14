@@ -56,7 +56,8 @@ ul, ol, dl {
 
 :not(li) > ul:only-child, :not(li) > ol:only-child, :not(li) > dl:only-child,
 h1 + ul:last-child, h1 + ol:last-child, h1 + dl:last-child,
-h2 + ul:last-child, h2 + ol:last-child, h2 + dl:last-child {
+h2 + ul:last-child, h2 + ol:last-child, h2 + dl:last-child
+h3 + ul:last-child, h3 + ol:last-child, h3 + dl:last-child, {
     padding: 0;
 }
 
