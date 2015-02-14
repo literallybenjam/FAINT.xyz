@@ -200,9 +200,10 @@ function navWalk(walker) {
         if (walker.currentNode.id) s += '<a href="#' + walker.currentNode.id + '">';
         s += walker.currentNode.firstElementChild.textContent;
         if (walker.currentNode.id) s += '</a>';
-        walker.firstChild();
-        s += navWalk(walker);
-        walker.parentNode();
+        if (walker.firstChild()); {
+            s += navWalk(walker);
+            walker.parentNode();
+        }
         s += "</li>";
     }
     while (walker.nextSibling());
@@ -215,10 +216,11 @@ function navInit() {
     var walker = document.createTreeWalker(document.getElementsByTagName("MAIN").item(0), NodeFilter.SHOW_ELEMENT, function(node) {
         if (node.nodeName.toUpperCase() === "SECTION" && node.children.length && ( node.firstElementChild.tagName.toUpperCase[0] === "H1" || node.firstElementChild.tagName.toUpperCase[0] === "H2" || node.firstElementChild.tagName.toUpperCase[0] === "H3" || node.firstElementChild.tagName.toUpperCase[0] === "H4" || node.firstElementChild.tagName.toUpperCase[0] === "H5" || node.firstElementChild.tagName.toUpperCase[0] === "H6")) return NodeFilter.FILTER_ACCEPT; else return NodeFilter.FILTER_SKIP;
     });
-    walker.firstChild();
-    var nav = document.createElement("NAV");
-    nav.innerHTML = navWalk(walker);
-    document.body.appendChild(nav);
+    if (walker.firstChild()) {
+        var nav = document.createElement("NAV");
+        nav.innerHTML = navWalk(walker);
+        document.body.appendChild(nav);
+    }
 }
 
 function exportInit() {
