@@ -15,12 +15,12 @@
 
 /*  SECTIONING  */
 
-aside {
+aside, header, body > nav {
     font-weight: 100;
 }
 
-body > nav {
-    font-weight: 100;
+footer {
+    font-weight: 300;
 }
 
 /*  TABLES  */
