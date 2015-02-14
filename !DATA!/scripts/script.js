@@ -198,7 +198,7 @@ function navWalk(walker) {
     do {
         s += "<li>";
         if (walker.currentNode.id) s += '<a href="#' + walker.currentNode.id + '">';
-        s += walker.firstElementChild.textContent;
+        s += walker.currentNode.firstElementChild.textContent;
         if (walker.currentNode.id) s += '</a>';
         walker.firstChild();
         s += navWalk(walker);
