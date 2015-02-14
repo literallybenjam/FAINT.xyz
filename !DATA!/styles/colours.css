@@ -1,3 +1,12 @@
+/*  GLOBAL RULES  */
+
+@media print {
+    *:root * {
+        color: black;
+        background: white;
+    }
+}
+
 /*  PRE-CSS4 SELECTION RULES  */
 
 *::selection {
@@ -13,6 +22,7 @@
 *:root {
     color: #636363;
 }
+
 *:root::selection {
     background: #cccccc;
 }

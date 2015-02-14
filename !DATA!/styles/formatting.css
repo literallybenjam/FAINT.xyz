@@ -185,6 +185,12 @@ a[href] {
 
 }
 
+@media print {
+    a[href]::after {
+        content: " [" attr(href) "]";
+    }
+}
+
 header a[href], nav a[href] {
     border: none;
     text-decoration: none;

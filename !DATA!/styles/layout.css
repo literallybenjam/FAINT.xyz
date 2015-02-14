@@ -11,8 +11,9 @@ body {
     width: calc(100% - 180pt);
 }
 
-@media (max-width: 360pt) {
+@media print, (max-width: 360pt) {
     body {
+        padding: 0 0 0 60pt;
         width: auto;
     }
 }
@@ -50,6 +51,12 @@ body > nav {
     body > nav {
         position: static;
         width: auto;
+    }
+}
+
+@media print {
+    body > nav {
+        display: none;
     }
 }
 
