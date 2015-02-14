@@ -131,6 +131,10 @@ h2 {
     line-height: 36pt;
 }
 
+h2::before {
+    content: "";
+}
+
 h3::after {
     content: ":";
 }
