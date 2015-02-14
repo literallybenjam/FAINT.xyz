@@ -20,6 +20,13 @@ body {
 
 /*  SECTIONING  */
 
+article > footer {
+    display: block;
+    margin: 18pt 0 0;
+    border-top: 1pt dashed;
+    padding: 17pt 0 0;
+}
+
 header {
     display: block;
     margin: 0 0 18pt;
@@ -138,7 +145,7 @@ h1 {
 
 h2 {
     position: relative;
-    margin: 18pt 0;
+    margin: 18pt auto;
 }
 
 h2::before {

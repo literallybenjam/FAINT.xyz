@@ -89,6 +89,10 @@ function exportNode(node) {
                     s = ("\n" + s.replace(/\s+$/, "").replace(/^\s+/, "")).replace(/\s*\n\s*/g, "\n").replace(/\n/g, "\n > “") + "”\n";
                     break;
 
+                case "BR":
+                    s = "\n";
+                    break;
+
                 case "CODE":
                 case "I":
                     s = "'" + s.trim() + "'";
@@ -192,7 +196,7 @@ function exportNode(node) {
 function exportInit() {
     for (var i = 0; i < document.getElementsByTagName("ARTICLE").length; i++) {
         var footer = document.createElement("FOOTER");
-        footer.innerHTML = '<a href="data:text/plain;charset=utf-8,' + encodeURIComponent(exportNode(document.getElementsByTagName("ARTICLE").item(0)).trim()) + '">download</a>';
+        footer.innerHTML = '<a href="data:text/plain;charset=utf-8,' + encodeURIComponent(exportNode(document.getElementsByTagName("ARTICLE").item(0)).trim()) + '" target="_blank">download</a>';
         document.getElementsByTagName("ARTICLE").item(0).appendChild(footer);
     }
 }
