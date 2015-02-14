@@ -4,6 +4,25 @@
     cursor: help;
     border-bottom: dotted currentColor black;
 }
+
+@supports (text-decoration-style: dotted) or (-moz-text-decoration-style: dotted) or (-webkit-text-decoration-style: dotted) {
+
+    abbr {
+        border: none;
+    }
+
+    *[title]:not([title=""]):not(a) {
+        border: none;
+        -webkit-text-decoration-line: underline;
+        -webkit-text-decoration-style: dotted;
+        -moz-text-decoration-line: underline;
+        -moz-text-decoration-style: dotted;
+        text-decoration-line: underline;
+        text-decoration-style: dotted;
+    }
+
+}
+
 *:lang(en) {
     quotes: "“" "”" "‘" "’";
 }
@@ -11,8 +30,7 @@
 /*  :ROOT ELEMENT */
 
 *:root {
-    line-height: 1.5pc;
-    text-align: justify;
+    line-height: 18pt;
     quotes: "“" "”" "‘" "’";
 }
 
@@ -20,10 +38,150 @@
 
 /*  SECTIONING  */
 
+footer {
+    text-align: right;
+}
+
 /*  TABLES  */
 
 /*  LISTS  */
 
+ul, ol, dl {
+    text-align: left;
+}
+
+ul {
+    list-style-type: circle;
+}
+
+nav ul, nav li ul, nav li li ul, nav li li li ul, nav li li li li ul {
+    list-style-type: none;
+}
+
+li ul {
+    list-style-type: square;
+}
+
+li li ul {
+    list-style-type: disc;
+}
+
+li li li ul {
+    list-style-type: circle;
+}
+
+li li li li ul {
+    list-style-type: square;
+}
+
+ol {
+    list-style-type: upper-roman;
+}
+
+li ol {
+    list-style-type: decimal-leading-zero;
+}
+
+li li ol {
+    list-style-type: lower-latin;
+}
+
+li li li ol {
+    list-style-type: lower-greek;
+}
+
+li li li li ol {
+    list-style-type: decimal;
+}
+
+dt + dt::before {
+    content: ", "
+}
+
+dd::before {
+    white-space: pre-wrap;
+    content: " : ";
+}
+
+dd + dd::before {
+    content: "〃 : ";
+}
+
+dd::after {
+    content: "";
+}
+
 /*  BLOCK ELEMENTS  */
 
+figcaption {
+    line-height: 14.4pt;
+    text-align: right;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: left;
+}
+
+hr::after {
+    text-align: center;
+    white-space: pre;
+    content: "*   *   *"
+}
+
+p {
+    text-align: justify;
+}
+
+h3 + p, p + p {
+    text-indent: 15pt;
+}
+
+p + p::before {
+    text-indent: 0;
+    content: "¶";
+}
+
+blockquote p::before, blockquote p + p::before {
+    text-indent: 0;
+    content: open-quote;
+}
+
+blockquote p::after {
+    text-indent: 0;
+    content: close-quote;
+}
+
+footer h3 + p, footer p + p {
+    text-indent: 0;
+}
+
+footer p + p::before {
+    content: none;
+}
+
 /*  PHRASING  */
+
+a[href] {
+    border-bottom: thin dashed;
+    text-decoration: none;
+    transition: background .5s;
+}
+
+@supports (text-decoration-style: dashed) or (-moz-text-decoration-style: dashed) or (-webkit-text-decoration-style: dashed) {
+
+    a[href] {
+        border: none;
+        -webkit-text-decoration-line: underline;
+        -webkit-text-decoration-style: dashed;
+        -moz-text-decoration-line: underline;
+        -moz-text-decoration-style: dashed;
+        text-decoration-line: underline;
+        text-decoration-style: dashed;
+    }
+
+}
+
+nav a[href] {
+    border: none;
+    text-decoration: none;
+}

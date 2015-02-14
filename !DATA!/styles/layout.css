@@ -1,11 +1,166 @@
 /*  PAGE LAYOUT  */
 
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: calc(100% - 180pt);
+}
+
+@media (max-width: 360pt) {
+    body {
+        width: auto;
+    }
+}
+
 /*  SECTIONING  */
+
+main {
+    display: block;
+    margin: auto;
+    padding: 15pt;
+    max-width: 510pt;
+}
+
+body > nav {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 15pt;
+    width: 150pt;
+    overflow: auto;
+}
+
+@media (max-width: 360pt) {
+    body > nav {
+        position: static;
+        width: auto;
+    }
+}
 
 /*  TABLES  */
 
 /*  LISTS  */
 
+ul, ol, dl {
+    margin: 0;
+    padding: 0 0 0 30pt;
+}
+
+:not(li) > ul:only-child, :not(li) > ol:only-child, :not(li) > dl:only-child,
+h1 + ul:last-child, h1 + ol:last-child, h1 + dl:last-child,
+h2 + ul:last-child, h2 + ol:last-child, h2 + dl:last-child {
+    padding: 0;
+}
+
+dt {
+    display: inline;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+dd {
+    margin: 0 0 0 30pt;
+    padding: 0;
+}
+
+dd::before {
+    display: inline;
+}
+
+dd:after {
+    display: block;
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
+
 /*  BLOCK ELEMENTS  */
+
+blockquote {
+    margin: 18pt 15pt;
+}
+
+figcaption {
+    margin: 0;
+}
+
+figure, iframe, img, svg {
+    display: block;
+    margin: auto;
+    border: none;
+    padding: 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 100%;
+}
+
+figure {
+    margin: 18pt auto;
+}
+
+hr {
+    display: block;
+    position: relative;
+    margin: 0;
+    border: none;
+    padding: 0;
+    width: 100%;
+    height: 36pt;
+    overflow: hidden;
+}
+
+hr::after {
+    display: block;
+    position: absolute;
+    top: 9pt;
+    left: 0;
+    right: 0;
+    height: 18pt;
+}
+
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img, p img, li img, dt img, dd img, pre img, blockquote img,
+h1 svg, h2 svg, h3 svg, h4 svg, h5 svg, h6 svg, p svg, li svg, dt svg, dd svg, pre svg, blockquote svg {
+    display: inline-block;
+    margin: 0;
+    border: none;
+    padding: 0;
+    max-height: 1em;
+    max-width: none;
+    width: auto;
+    vertical-align: text-bottom;
+}
+
+p {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+p + p::before {
+    position: absolute;
+    top: 0;
+    left: 5pt;
+}
+
+blockquote p::before, blockquote p + p::before {
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 100%;
+}
+
+footer h3 + p, footer p + p {
+    margin-top: 15pt;
+}
 
 /*  PHRASING  */
