@@ -193,10 +193,35 @@ function exportNode(node) {
     return s.replace(/ +/g, " ").replace(/ *\n */g, "\n").replace(/\n+/g, "\n");
 }
 
+function navWalk(walker) {
+    var s = "<ol>";
+    while (walker.nextSibling()) {
+        if (!walker.currentNode.children.length || (walker.currentNode.children.length && walker.currentNode.firstElementChild.tagName.toUpperCase[0] != "H1" && walker.currentNode.firstElementChild.tagName.toUpperCase[0] != "H2" && walker.currentNode.firstElementChild.tagName.toUpperCase[0] != "H3" && walker.currentNode.firstElementChild.tagName.toUpperCase[0] != "H4" && walker.currentNode.firstElementChild.tagName.toUpperCase[0] != "H5" && walker.currentNode.firstElementChild.tagName.toUpperCase[0] != "H6")) continue;
+        s += "<li>";
+        if (walker.currentNode.id) s += '<a href="#' + walker.currentNode.id + '">';
+        s += walker.firstElementChild.textContent;
+        if (walker.currentNode.id) s += '</a>';
+        walker.firstChild();
+        s += navWalk(walker);
+        walker.parentNode();
+        s += "</li>";
+    }
+    s += "</ol>";
+    if (s !== "<ol></ol>") return s;
+    return "";
+}
+
+function navInit() {
+    var walker = document.createTreeWalker(document.getElementsByTagName("MAIN").item(0), NodeFilter.SHOW_ELEMENT, function(node) {if (node.nodeName.toUpperCase() === "SECTION") return NodeFilter.ACCEPT_NODE; else return NodeFilter.REJECT_NODE;});
+    var nav = document.createElement("NAV");
+    nav.innerHTML = navWalk(walker);
+    document.body.appendChild(nav);
+}
+
 function exportInit() {
     for (var i = 0; i < document.getElementsByTagName("ARTICLE").length; i++) {
         var footer = document.createElement("FOOTER");
-        footer.innerHTML = '<a href="data:text/plain;charset=utf-8,' + encodeURIComponent(exportNode(document.getElementsByTagName("ARTICLE").item(0)).trim()) + '" target="_blank">download</a>';
+        footer.innerHTML = '<a href="data:text/plain;charset=utf-8,' + encodeURIComponent(exportNode(document.getElementsByTagName("ARTICLE").item(0)).trim()) + '" target="_blank">download this article</a>';
         document.getElementsByTagName("ARTICLE").item(0).appendChild(footer);
     }
 }
