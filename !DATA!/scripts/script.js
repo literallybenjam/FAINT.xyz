@@ -195,8 +195,7 @@ function exportNode(node) {
 
 function navWalk(walker) {
     var s = "<ol>";
-    while (walker.nextSibling()) {
-        if (!walker.currentNode.children.length || (walker.currentNode.children.length && walker.currentNode.firstElementChild.tagName.toUpperCase[0] != "H1" && walker.currentNode.firstElementChild.tagName.toUpperCase[0] != "H2" && walker.currentNode.firstElementChild.tagName.toUpperCase[0] != "H3" && walker.currentNode.firstElementChild.tagName.toUpperCase[0] != "H4" && walker.currentNode.firstElementChild.tagName.toUpperCase[0] != "H5" && walker.currentNode.firstElementChild.tagName.toUpperCase[0] != "H6")) continue;
+    do {
         s += "<li>";
         if (walker.currentNode.id) s += '<a href="#' + walker.currentNode.id + '">';
         s += walker.firstElementChild.textContent;
@@ -206,13 +205,16 @@ function navWalk(walker) {
         walker.parentNode();
         s += "</li>";
     }
+    while (walker.nextSibling());
     s += "</ol>";
     if (s !== "<ol></ol>") return s;
     return "";
 }
 
 function navInit() {
-    var walker = document.createTreeWalker(document.getElementsByTagName("MAIN").item(0), NodeFilter.SHOW_ELEMENT, function(node) {if (node.nodeName.toUpperCase() === "SECTION") return NodeFilter.FILTER_ACCEPT; else return NodeFilter.FILTER_SKIP;});
+    var walker = document.createTreeWalker(document.getElementsByTagName("MAIN").item(0), NodeFilter.SHOW_ELEMENT, function(node) {
+        if (node.nodeName.toUpperCase() === "SECTION" && node.children.length && ( node.firstElementChild.tagName.toUpperCase[0] === "H1" || node.firstElementChild.tagName.toUpperCase[0] === "H2" || node.firstElementChild.tagName.toUpperCase[0] === "H3" || node.firstElementChild.tagName.toUpperCase[0] === "H4" || node.firstElementChild.tagName.toUpperCase[0] === "H5" || node.firstElementChild.tagName.toUpperCase[0] === "H6")) return NodeFilter.FILTER_ACCEPT; else return NodeFilter.FILTER_SKIP;
+    });
     walker.firstChild();
     var nav = document.createElement("NAV");
     nav.innerHTML = navWalk(walker);
