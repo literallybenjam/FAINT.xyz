@@ -198,6 +198,10 @@ em::before, em::after {
     content: "~";
 }
 
+mark {
+    outline: thin solid;
+}
+
 u {
     text-decoration: none;
 }

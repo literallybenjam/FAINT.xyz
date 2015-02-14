@@ -70,3 +70,8 @@ a[href] {
 a[href]:hover {
     background: #cccccc;
 }
+
+mark {
+    background: none;
+    outline-color: #cccccc;
+}
