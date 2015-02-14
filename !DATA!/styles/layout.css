@@ -146,8 +146,9 @@ h1 {
 h2 {
     position: relative;
     margin: 18pt auto;
-    width: fill-content;
-    width: -moz-fill-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
 }
 
 h2::before {
