@@ -214,7 +214,7 @@ function navWalk(walker) {
 
 function navInit() {
     var walker = document.createTreeWalker(document.getElementsByTagName("MAIN").item(0), NodeFilter.SHOW_ELEMENT, function(node) {
-        if (node.nodeName.toUpperCase() === "SECTION" && node.children.length && ( node.firstElementChild.tagName.toUpperCase[0] === "H1" || node.firstElementChild.tagName.toUpperCase[0] === "H2" || node.firstElementChild.tagName.toUpperCase[0] === "H3" || node.firstElementChild.tagName.toUpperCase[0] === "H4" || node.firstElementChild.tagName.toUpperCase[0] === "H5" || node.firstElementChild.tagName.toUpperCase[0] === "H6")) return NodeFilter.FILTER_ACCEPT; else return NodeFilter.FILTER_SKIP;
+        if (node.nodeName.toUpperCase() === "SECTION" && node.children.length && ( node.firstElementChild.tagName.toUpperCase() === "H1" || node.firstElementChild.tagName.toUpperCase() === "H2" || node.firstElementChild.tagName.toUpperCase() === "H3" || node.firstElementChild.tagName.toUpperCase() === "H4" || node.firstElementChild.tagName.toUpperCase() === "H5" || node.firstElementChild.tagName.toUpperCase() === "H6")) return NodeFilter.FILTER_ACCEPT; else return NodeFilter.FILTER_SKIP;
     });
     if (walker.firstChild()) {
         var nav = document.createElement("NAV");
