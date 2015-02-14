@@ -55,6 +55,14 @@ h2, h3, h4, h5, h6 {
 
 /*  PHRASING  */
 
+b {
+    font-weight: inherit;
+}
+
+cite {
+    font-style: inherit;
+}
+
 dfn, strong {
     font-weight: 400;
 }

@@ -189,3 +189,25 @@ nav a[href] {
     border: none;
     text-decoration: none;
 }
+
+b::before {
+    content: "#";
+}
+
+em::before, em::after {
+    content: "~";
+}
+
+
+
+u {
+    text-decoration: none;
+}
+
+u::before {
+    content: "【";
+}
+
+u::after {
+    content: "】";
+}
