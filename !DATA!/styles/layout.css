@@ -68,13 +68,20 @@ dt {
 }
 
 dd {
-    margin: 0 0 0 20pt;
+    position: relative;
+    margin: 0;
     padding: 0;
 }
 
-dd::before {
-    display: inline;
-    float: left;
+dd + dd {
+    margin: 0 0 0 20pt;
+}
+
+dd + dd::before {
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 100%;
 }
 
 dd:after {

@@ -37,6 +37,10 @@ dt {
     color: #3b3b3b;
 }
 
+dd::before {
+    color: #cccccc;
+}
+
 /*  BLOCK ELEMENTS  */
 
 h1, h2, h3, h4, h5, h6 {
@@ -48,7 +52,7 @@ hr {
     background: none;
 }
 
-p::before {
+p::before, p::after {
     color: #cccccc;
 }
 
