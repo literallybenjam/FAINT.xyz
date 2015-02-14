@@ -30,7 +30,7 @@ body > nav {
     display: block;
     position: fixed;
     left: 0;
-    top: 0;
+    top: 72pt;
     bottom: 0;
     margin: 0;
     padding: 15pt;
@@ -115,6 +115,18 @@ figure, iframe, img, svg {
 
 figure {
     margin: 18pt auto;
+}
+
+h1 {
+    margin: 0 0 0 -60pt;
+}
+
+h2 {
+    margin: 18pt 0;
+}
+
+h3 {
+    margin: 18pt 0 0;
 }
 
 hr {

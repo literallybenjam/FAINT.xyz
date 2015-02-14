@@ -45,6 +45,10 @@ figcaption {
     font-size: 12pt;
 }
 
+h1 {
+    font-size: 60pt;
+}
+
 h2, h3, h4, h5, h6 {
     font-weight: 400;
 }
