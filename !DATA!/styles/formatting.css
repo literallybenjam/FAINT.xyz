@@ -198,16 +198,6 @@ em::before, em::after {
     content: "~";
 }
 
-
-
 u {
     text-decoration: none;
-}
-
-u::before {
-    content: "【";
-}
-
-u::after {
-    content: "】";
 }

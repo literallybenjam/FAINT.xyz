@@ -19,6 +19,13 @@ body {
 
 /*  SECTIONING  */
 
+header {
+    display: block;
+    margin: 0 0 15pt;
+    border-bottom: 1pt dashed;
+    padding: 0 0 14pt;
+}
+
 main {
     display: block;
     margin: auto;
@@ -33,7 +40,8 @@ body > nav {
     top: 72pt;
     bottom: 0;
     margin: 0;
-    padding: 15pt;
+    border-right: 1pt solid;
+    padding: 14pt;
     width: 150pt;
     overflow: auto;
 }

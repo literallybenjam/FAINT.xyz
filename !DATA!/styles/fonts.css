@@ -59,7 +59,7 @@ b {
     font-weight: inherit;
 }
 
-cite {
+cite, em {
     font-style: inherit;
 }
 

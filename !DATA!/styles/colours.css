@@ -29,6 +29,10 @@ aside, footer {
     color: #828282;
 }
 
+header, body > nav {
+    border-color: inherit;
+}
+
 /*  TABLES  */
 
 /*  LISTS  */
