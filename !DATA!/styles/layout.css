@@ -143,7 +143,6 @@ h1 {
 }
 
 h2 {
-    position: relative;
     margin: 18pt auto;
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -153,10 +152,10 @@ h2 {
 h2::before {
     display: block;
     position: absolute;
-    top: 50%;
     left: 0;
     right: 0;
-    border-bottom: thin solid;
+    margin-top: 8.5pt;
+    border-bottom: 1pt solid;
     height: 0;
     z-index: -1;
 }
