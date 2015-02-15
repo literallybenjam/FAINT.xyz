@@ -94,7 +94,6 @@ function exportNode(node) {
                     break;
 
                 case "CODE":
-                case "I":
                     s = "'" + s.trim() + "'";
                     break;
 
@@ -112,6 +111,10 @@ function exportNode(node) {
 
                 case "EM":
                     s = "~" + s.trim() + "~";
+                    break;
+
+                case "FIGURE":
+                    s = "\n" + s + "\n";
                     break;
 
                 case "H1":
@@ -140,6 +143,18 @@ function exportNode(node) {
 
                 case "HR":
                     s = "\n* * *\n";
+                    break;
+
+                case "I":
+                    s = "'" + s.trim() + "'";
+                    break;
+
+                case "IFRAME":
+                    s = "\n[" + node.src + "]\n";
+                    break;
+
+                case "IMG":
+                    s = node.alt;
                     break;
 
                 case "INS":
