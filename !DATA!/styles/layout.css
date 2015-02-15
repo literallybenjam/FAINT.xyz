@@ -36,6 +36,7 @@ header {
 
 main {
     display: block;
+    position: relative;
     margin: auto;
     padding: 15pt;
     max-width: 510pt;
@@ -144,6 +145,7 @@ h1 {
 
 h2 {
     margin: 18pt auto;
+    padding: 0 3pt;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
@@ -154,7 +156,7 @@ h2::before {
     position: absolute;
     left: 0;
     right: 0;
-    margin-top: 8.5pt;
+    margin-top: 17.5pt;
     border-bottom: 1pt solid;
     height: 0;
     z-index: -1;
