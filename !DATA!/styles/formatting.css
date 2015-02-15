@@ -135,6 +135,12 @@ h2::before {
     content: "";
 }
 
+@media print {
+    h2::before {
+        content: none;
+    }
+}
+
 h3::after {
     content: ":";
 }

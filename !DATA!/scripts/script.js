@@ -227,7 +227,7 @@ function navInit() {
 function exportInit() {
     for (var i = 0; i < document.getElementsByTagName("ARTICLE").length; i++) {
         var footer = document.createElement("FOOTER");
-        footer.innerHTML = '<a href="data:text/plain;charset=utf-8,' + encodeURIComponent(exportNode(document.getElementsByTagName("ARTICLE").item(0)).trim()) + '" target="_blank">download this article</a>';
+        footer.innerHTML = '<style type="text/css">@media print {article > footer:last-child {display: none;}}</style><a href="data:text/plain;charset=utf-8,' + encodeURIComponent(exportNode(document.getElementsByTagName("ARTICLE").item(0)).trim()) + '" target="_blank">download this article</a>';
         document.getElementsByTagName("ARTICLE").item(0).appendChild(footer);
     }
 }
