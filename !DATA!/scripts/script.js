@@ -113,6 +113,10 @@ function exportNode(node) {
                     s = "~" + s.trim() + "~";
                     break;
 
+                case "FIGCAPTION":
+                    s = "\n– " + s + "\n";
+                    break;
+
                 case "FIGURE":
                     s = "\n" + s + "\n";
                     break;
