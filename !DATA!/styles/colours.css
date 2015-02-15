@@ -76,7 +76,7 @@ p::before, p::after {
 
 /*  PHRASING  */
 
-a[href], b, cite, em, mark, strong, u {
+a[href], b, cite, em, mark, strong, time, u {
     color: #3b3b3b;
 }
 
