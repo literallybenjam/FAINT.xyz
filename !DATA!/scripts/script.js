@@ -230,7 +230,7 @@ function exportInit() {
         footer.innerHTML = '<a href="data:text/plain;charset=utf-8,' + encodeURIComponent(exportNode(document.getElementsByTagName("ARTICLE").item(0)).trim()) + '" target="_blank">download this article</a>';
         document.getElementsByTagName("ARTICLE").item(0).appendChild(footer);
     }
-    document.styleSheets.item(0).insertRule("@media print{article > footer:last-child {display: none;}}", 0);
+    document.styleSheets.item(0).insertRule("@media print{article > footer:last-child {display: none;}}", document.styleSheets.item(0).cssRules.length);
 }
 
 function init() {
