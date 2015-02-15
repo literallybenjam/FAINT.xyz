@@ -179,6 +179,11 @@ hr::after {
     height: 18pt;
 }
 
+iframe[src^="https://www.youtube.com/embed/"], iframe[src^="http://www.youtube.com/embed/"], iframe[src^="https://youtube.com/embed/"], iframe[src^="http://youtube.com/embed/"] {
+    width: 560px;
+    height: 315px;
+}
+
 h1 img, h2 img, h3 img, h4 img, h5 img, h6 img, p img, li img, dt img, dd img, pre img, blockquote img,
 h1 svg, h2 svg, h3 svg, h4 svg, h5 svg, h6 svg, p svg, li svg, dt svg, dd svg, pre svg, blockquote svg {
     display: inline-block;
