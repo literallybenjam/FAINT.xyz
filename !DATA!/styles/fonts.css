@@ -20,6 +20,7 @@ aside, header, body > nav {
 }
 
 footer {
+    font-size: 12pt;
     font-weight: 300;
 }
 
@@ -75,4 +76,9 @@ cite, em {
 
 dfn, strong {
     font-weight: 400;
+}
+
+small {
+    font-size: inherit;
+    font-weight: 100;
 }

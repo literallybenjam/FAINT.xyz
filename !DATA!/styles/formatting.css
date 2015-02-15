@@ -39,6 +39,7 @@
 /*  SECTIONING  */
 
 footer {
+    line-height: 14.4pt;
     text-align: right;
 }
 
@@ -232,6 +233,10 @@ em::before, em::after {
 
 mark {
     outline: thin solid;
+}
+
+small {
+    line-height: inherit;
 }
 
 u {
