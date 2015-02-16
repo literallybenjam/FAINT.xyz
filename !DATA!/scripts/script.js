@@ -176,8 +176,8 @@ function exportNode(node) {
                     break;
 
                 case "P":
-                    if (window.getComputedStyle(node, "::after").getPropertyValue("content") != "none") s = "\n" + window.getComputedStyle(node, "::before").getPropertyValue("content")[1] + " " + s + window.getComputedStyle(node, "::after").getPropertyValue("content")[1] + "\n";
-                    else s = "\n" + window.getComputedStyle(node, "::before").getPropertyValue("content")[1] + " " + s + "\n";
+                    if (window.getComputedStyle(node, "::after").getPropertyValue("content") != "none") s = "\n" + window.getComputedStyle(node, "::before").getPropertyValue("content").substring(1, window.getComputedStyle(node, "::before").getPropertyValue("content").length - 1) + " " + s + window.getComputedStyle(node, "::after").getPropertyValue("content").substring(1, window.getComputedStyle(node, "::after").getPropertyValue("content").length - 1) + "\n";
+                    else s = "\n" + window.getComputedStyle(node, "::before").getPropertyValue("content").substring(1, window.getComputedStyle(node, "::before").getPropertyValue("content").length - 1) + " " + s + "\n";
                     break;
 
                 case "Q":
