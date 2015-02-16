@@ -176,8 +176,10 @@ function exportNode(node) {
                     break;
 
                 case "P":
-                    if (window.getComputedStyle(node, "::after").getPropertyValue("content") != "none") s = "\n" + window.getComputedStyle(node, "::before").getPropertyValue("content").substring(1, window.getComputedStyle(node, "::before").getPropertyValue("content").length - 1) + " " + s + window.getComputedStyle(node, "::after").getPropertyValue("content").substring(1, window.getComputedStyle(node, "::after").getPropertyValue("content").length - 1) + "\n";
-                    else s = "\n" + window.getComputedStyle(node, "::before").getPropertyValue("content").substring(1, window.getComputedStyle(node, "::before").getPropertyValue("content").length - 1) + " " + s + "\n";
+                    if (window.getComputedStyle(node, "::before").getPropertyValue("content") == "¶") s = "\n¶ " + s + "\n";
+                    else if (window.getComputedStyle(node, "::after").getPropertyValue("content") == "no-close-quote") s = "\n“" + s + "\n";
+                    else if (window.getComputedStyle(node, "::after").getPropertyValue("content") == "close-quote") s = "\n“" + s + "”\n";
+                    else s = "\n" + s + "\n";
                     break;
 
                 case "Q":
