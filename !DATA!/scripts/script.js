@@ -86,7 +86,7 @@ function exportNode(node) {
                     break;
 
                 case "BLOCKQUOTE":
-                    s = ("\n" + s.replace(/\s+$/, "").replace(/^\s+/, "")).replace(/\s*\n\s*/g, "\n").replace(/\n/g, "\n > “") + "”\n";
+                    s = ("\n" + s.replace(/\s+$/, "").replace(/^\s+/, "")).replace(/\s*\n\s*/g, "\n").replace(/\n/g, "\n > ") + "”\n";
                     break;
 
                 case "BR":
@@ -176,7 +176,8 @@ function exportNode(node) {
                     break;
 
                 case "P":
-                    s = "\n¶ " + s + "\n";
+                    if (window.getComputedStyle(node, "::after").getPropertyValue("content") != "none") s = "\n" + window.getComputedStyle(node, "::before").getPropertyValue("content")[1] + " " + s + window.getComputedStyle(node, "::after").getPropertyValue("content")[1] + "\n";
+                    else s = "\n" + window.getComputedStyle(node, "::before").getPropertyValue("content")[1] + " " + s + "\n";
                     break;
 
                 case "Q":
