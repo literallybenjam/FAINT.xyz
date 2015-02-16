@@ -176,7 +176,7 @@ function exportNode(node) {
                     break;
 
                 case "P":
-                    if (window.getComputedStyle(node, "::before").getPropertyValue("content") == "¶") s = "\n¶ " + s + "\n";
+                    if (window.getComputedStyle(node, "::before").getPropertyValue("content") == '"¶"') s = "\n¶ " + s + "\n";
                     else if (window.getComputedStyle(node, "::after").getPropertyValue("content") == "no-close-quote") s = "\n“" + s + "\n";
                     else if (window.getComputedStyle(node, "::after").getPropertyValue("content") == "close-quote") s = "\n“" + s + "”\n";
                     else s = "\n" + s + "\n";
