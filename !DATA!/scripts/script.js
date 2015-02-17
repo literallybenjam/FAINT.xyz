@@ -242,7 +242,7 @@ function navInit() {
     });
     if (walker.firstChild()) {
         var nav = document.createElement("NAV");
-        nav.innerHTML = navWalk(walker);
+        nav.innerHTML = navWalk(walker) + '<hr><a href="/">&lt;-- back to <u>FAINT.xyz</u></a>';
         document.body.appendChild(nav);
     }
 }
