@@ -86,7 +86,7 @@ function exportNode(node) {
                     break;
 
                 case "BLOCKQUOTE":
-                    s = ("\n" + s.replace(/\s+$/, "").replace(/^\s+/, "")).replace(/\s*\n\s*/g, "\n").replace(/\n/g, "\n > ") + "”\n";
+                    s = ("\n" + s.replace(/\s+$/, "").replace(/^\s+/, "")).replace(/\s*\n\s*/g, "\n").replace(/\n/g, "\n > ");
                     break;
 
                 case "BR":
