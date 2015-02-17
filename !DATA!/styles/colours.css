@@ -96,7 +96,7 @@ main > nav > a[href]::before {
     border-color: transparent;
 }
 main > nav > a[href]:hover::before {
-    border-color: currentColor;
+    border-color: #828282;
 }
 
 mark {
