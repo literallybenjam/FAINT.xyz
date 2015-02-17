@@ -217,7 +217,6 @@ footer h3 + p, footer p + p {
 main > nav > a[href] {
     display: block;
     position: relative;
-    z-index: -2;
 }
 
 main > nav > a[href]::before {
