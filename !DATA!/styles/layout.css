@@ -172,7 +172,7 @@ hr {
 hr::after {
     display: block;
     position: absolute;
-    top: -9pt;
+    top: 0;
     left: 0;
     right: 0;
     height: 18pt;
