@@ -89,13 +89,13 @@ a[href]:hover {
     background: #cccccc;
 }
 
-main > nav > a[href] {
+main > nav > a[href], main > nav > a[href]:hover {
     background: none;
 }
 main > nav > a[href]::before {
     border-color: transparent;
 }
-main > nav > a[href]::before:hover {
+main > nav > a[href]:hover::before {
     border-color: currentColor;
 }
 
