@@ -89,6 +89,16 @@ a[href]:hover {
     background: #cccccc;
 }
 
+main > nav > a[href] {
+    background: none;
+}
+main > nav > a[href]::before {
+    border-color: transparent;
+}
+main > nav > a[href]::before:hover {
+    border-color: currentColor;
+}
+
 mark {
     background: none;
     outline-color: #cccccc;

@@ -213,3 +213,18 @@ footer h3 + p, footer p + p {
 }
 
 /*  PHRASING  */
+
+main > nav > a[href] {
+    display: block;
+    position: relative;
+    z-index: -2;
+}
+
+main > nav > a[href]::before {
+    display: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    width: 2.5pt;
+    border-left: 5pt solid;
+}

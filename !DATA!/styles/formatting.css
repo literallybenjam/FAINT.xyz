@@ -223,6 +223,11 @@ header a[href], nav a[href] {
     text-decoration: none;
 }
 
+main > nav > a[href]::before {
+    transition: border-color .5s;
+    content: "";
+}
+
 b::before {
     content: "#";
 }
