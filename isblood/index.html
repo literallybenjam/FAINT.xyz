@@ -88,18 +88,13 @@
                 <figure>
                     <svg width="72pt" height="72pt" viewBox="0 0 16 16" fill="currentColor" font-weight="400">
                         <defs>
-                            <mask id="bordermask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
-                                <rect x="0" y="0" width="16" height="16" fill="white" />
-                                <rect x=".5" y=".5" width="15" height="15" fill="black" />
-                            </mask>
                             <mask id="scoremask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x=".5" y=".5" width="15" height="15">
-                                <rect x=".5" y=".5" width="15" height="15" fill="white" />
+                                <rect x="0" y="0" width="16" height="16" fill="white" />
                                 <text x="8" y="4" text-anchor="middle" fill="black" font-size="3">our score:</text>
                                 <text x="8" y="13" text-anchor="middle" fill="black" font-size="10">9</text>
                             </mask>
                         </defs>
-                        <rect x="0" y="0" width="16" height="16" fill="#cccccc" mask="url(#bordermask)"/>
-                        <rect x=".5" y=".5" width="15" height="15" fill="#1c1c1c" mask="url(#scoremask)" />
+                        <rect x="0" y="0" width="16" height="16" mask="url(#scoremask)" />
                     </svg>
                     <figcaption><strong>9.0</strong> / 10</figcaption>
                 </figure>
