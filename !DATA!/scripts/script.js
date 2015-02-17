@@ -259,12 +259,12 @@ function exportInit() {
 function init() {
     exportInit();
     checkLinks();
+    navInit();
     var hashLinks = document.querySelectorAll('a[href^="#"]');
     for (var i = 0; i < hashLinks.length; i++) {
         hashLinks.item(i).addEventListener("click", navHashFromLink, false);
     }
     navHashFromLocation();
-    navInit();
 }
 
 document.addEventListener("DOMContentLoaded", init, false);
