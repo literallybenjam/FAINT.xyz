@@ -225,6 +225,6 @@ main > nav > a[href]::before {
     top: 0;
     bottom: 0;
     right: 100%;
-    width: 2.5pt;
+    width: 10pt;
     border-left: 5pt solid;
 }
