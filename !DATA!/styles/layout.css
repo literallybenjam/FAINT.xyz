@@ -221,7 +221,8 @@ main > nav > a[href] {
 }
 
 main > nav > a[href]::before {
-    display: absolute;
+    display: block;
+    position: absolute;
     top: 0;
     bottom: 0;
     right: 100%;
