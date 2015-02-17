@@ -158,7 +158,8 @@ function exportNode(node) {
                     break;
 
                 case "IMG":
-                    s = node.alt;
+                    if (node.alt) s = "[image, " + node.alt + "]";
+                    else s = "[image]";
                     break;
 
                 case "INS":
