@@ -11,7 +11,7 @@ function onYouTubeIframeAPIReady() {
     var i;
     yt.frames = document.querySelectorAll('iframe[src^="https://www.youtube.com/embed/"], iframe[src^="http://www.youtube.com/embed/"], iframe[src^="https://youtube.com/embed/"], iframe[src^="http://youtube.com/embed/"]');
     for (i = 0; i < yt.frames.length; i++) {
-        yt.frames.item(i).yt_player = new YT.player(yt.frames.item(i));
+        yt.frames.item(i).yt_player = new YT.Player(yt.frames.item(i));
         yt.frames.item(i).addEventListener("scrolledTo", yt.processScroll, false);
     }
 }
