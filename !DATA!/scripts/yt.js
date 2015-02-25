@@ -20,8 +20,8 @@ yt.processScroll = function(e) {
     if (!e.source) return;
     var start = 0;
     var end = 0;
-    if (e.source.dataset.ytStart) start = e.source.dataset.ytStart;
-    if (e.source.dataset.ytEnd) end = e.source.dataset.ytEnd;
+    if (Number(e.source.dataset.ytStart)) start = Number(e.source.dataset.ytStart);
+    if (Number(e.source.dataset.ytEnd)) end = Number(e.source.dataset.ytEnd);
     if (start < end) this.yt_player.loadVideoById({videoId: this.yt_player.getVideoData().video_id, startSeconds: start, endSeconds: end});
     else this.yt_player.loadVideoById({videoId: this.yt_player.getVideoData().video_id, startSeconds: start});
 }
