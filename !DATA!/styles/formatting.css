@@ -175,6 +175,14 @@ blockquote p::after {
     content: close-quote;
 }
 
+figure h3 + p, figure p + p {
+    text-indent: 0;
+}
+
+figure p + p::before {
+    content: none;
+}
+
 footer h3 + p, footer p + p {
     text-indent: 0;
 }

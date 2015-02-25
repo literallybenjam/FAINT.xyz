@@ -208,6 +208,10 @@ blockquote p::before, p + p::before {
     right: 100%;
 }
 
+figure h3 + p, figure p + p {
+    margin-top: 18pt;
+}
+
 footer h3 + p, footer p + p {
     margin-top: 15pt;
 }
