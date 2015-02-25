@@ -192,6 +192,14 @@ h2::before {
     z-index: -1;
 }
 
+body > aside h2 {
+    padding: 0 5.625pt;
+}
+
+body > aside h2::before {
+    margin: 15.25pt 20.625pt;
+}
+
 body > aside h2:first-child {
     margin-top: 0;
 }
