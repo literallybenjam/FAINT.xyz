@@ -49,8 +49,8 @@ body > aside {
     top: 72pt;
     margin: 15pt;
     padding: 0;
-    width: 165pt;
-    min-width: calc(50% - 195pt);
+    width: 150pt;
+    min-width: calc(50% - 180pt);
     max-height: calc(50% - 36pt);
     overflow: auto;
 }
@@ -76,8 +76,8 @@ body > nav {
     bottom: 0;
     margin: 15pt;
     padding: 0;
-    width: 165pt;
-    min-width: calc(50% - 195pt);
+    width: 150pt;
+    min-width: calc(50% - 180pt);
     max-height: calc(100% - 72pt);
     overflow: auto;
 }
@@ -221,8 +221,8 @@ iframe[src*="//youtube.com/embed/"], iframe[src*="//www.youtube.com/embed/"] {
 }
 
 body > aside iframe[src*="//youtube.com/embed/"], body > aside iframe[src*="//www.youtube.com/embed/"] {
-    width: 384px;
-    height: 216px;
+    width: 150px;
+    height: 84.375px;
 }
 
 h1 img, h2 img, h3 img, h4 img, h5 img, h6 img, p img, li img, dt img, dd img, pre img, blockquote img,
