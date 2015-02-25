@@ -9,7 +9,7 @@ var yt = {
 
 function onYouTubeIframeAPIReady() {
     var i;
-    yt.frames = document.querySelectorAll('iframe[src^="https://www.youtube.com/embed/"], iframe[src^="http://www.youtube.com/embed/"], iframe[src^="https://youtube.com/embed/"], iframe[src^="http://youtube.com/embed/"]');
+    yt.frames = document.querySelectorAll('iframe[src*="//youtube.com/embed/"], iframe[src*="//www.youtube.com/embed/"]');
     for (i = 0; i < yt.frames.length; i++) {
         yt.frames.item(i).width = yt.frames.item(i).clientWidth;
         yt.frames.item(i).height = yt.frames.item(i).clientHeight;

@@ -178,7 +178,7 @@ hr::after {
     height: 18pt;
 }
 
-iframe[src^="https://www.youtube.com/embed/"], iframe[src^="http://www.youtube.com/embed/"], iframe[src^="https://youtube.com/embed/"], iframe[src^="http://youtube.com/embed/"] {
+iframe[src*="//youtube.com/embed/"], iframe[src*="//www.youtube.com/embed/"] {
     width: 560px;
     height: 315px;
 }
