@@ -29,7 +29,7 @@ yt.processScroll = function(e) {
 
 yt.init = function() {
     var tag = document.createElement('script');
-    tag.src = "//www.youtube.com/iframe_api";
+    tag.src = "https://www.youtube.com/iframe_api";
     document.head.insertBefore(tag, document.head.firstElementChild);
 }
 
