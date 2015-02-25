@@ -17,6 +17,7 @@ function onYouTubeIframeAPIReady() {
 }
 
 yt.processScroll = function(e) {
+    console.log(e);
     if (!e.source) return;
     var start = 0;
     var end = 0;
