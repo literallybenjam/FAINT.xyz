@@ -57,7 +57,11 @@ body > aside {
 
 @media (max-width: 360pt) {
     body > aside {
-        position: static;
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
         width: auto;
         max-height: none;
     }
@@ -88,7 +92,11 @@ body > aside ~ nav {
 
 @media (max-width: 360pt) {
     body > nav, body > aside ~ nav {
-        position: static;
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
         width: auto;
         max-height: none;
     }
