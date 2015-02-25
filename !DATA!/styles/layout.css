@@ -163,6 +163,10 @@ figure {
     margin: 18pt auto;
 }
 
+main > figure, aside > figure {
+    width: 100%;
+}
+
 h1 {
     margin: 0 0 0 -60pt;
 }
