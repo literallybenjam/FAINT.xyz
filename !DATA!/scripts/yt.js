@@ -11,8 +11,6 @@ function onYouTubeIframeAPIReady() {
     var i;
     yt.frames = document.querySelectorAll('iframe[src*="//youtube.com/embed/"], iframe[src*="//www.youtube.com/embed/"]');
     for (i = 0; i < yt.frames.length; i++) {
-        yt.frames.item(i).width = yt.frames.item(i).clientWidth;
-        yt.frames.item(i).height = yt.frames.item(i).clientHeight;
         yt.frames.item(i).yt_player = new YT.Player(yt.frames.item(i));
         yt.frames.item(i).addEventListener("scrolledTo", yt.processScroll, false);
     }
@@ -31,7 +29,7 @@ yt.processScroll = function(e) {
 
 yt.init = function() {
     var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
+    tag.src = "//www.youtube.com/iframe_api";
     document.head.insertBefore(tag, document.head.firstElementChild);
 }
 
