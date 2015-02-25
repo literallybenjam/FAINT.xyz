@@ -1,5 +1,7 @@
 /* jslint asi:true, browser:true */
 
+var current_scroll_source = null;
+var current_scroll_element = null;
 var current_scroll_target = 0;
 var current_scroll_velocity = 0;
 var current_scroll_hash = "#";
@@ -18,13 +20,16 @@ function scroll() {
     else {
         window.scrollBy(0, current_scroll_target - current_scroll_location);
         current_scroll_velocity = 0;
+        current_scroll_element.dispatchEvent(new CustomEvent("scrolledTo", {source: current_scroll_source}));
         if (should_push_state) window.history.pushState(null, "", current_scroll_hash);
     }
 }
 
 function navHashFromLink(e) {
     if (document.getElementById(this.hash.substr(1))) {
-        current_scroll_target = document.getElementById(this.hash.substr(1)).getBoundingClientRect().top + window.scrollY;
+        current_scroll_source = this;
+        current_scroll_element = document.getElementById(this.hash.substr(1));
+        current_scroll_target = current_scroll_element.getBoundingClientRect().top + window.scrollY;
         current_scroll_velocity = 0;
         current_scroll_hash = this.hash;
         should_push_state = true;
@@ -35,7 +40,9 @@ function navHashFromLink(e) {
 
 function navHashFromLocation() {
     if (window.location.hash && document.getElementById(window.location.hash.substr(1))) {
-        current_scroll_target = document.getElementById(window.location.hash.substr(1)).getBoundingClientRect().top + window.scrollY;
+        current_scroll_source = null;
+        current_scroll_element = document.getElementById(window.location.hash.substr(1));
+        current_scroll_target = current_scroll_element.getBoundingClientRect().top + window.scrollY;
         current_scroll_velocity = 0;
         current_scroll_hash = window.location.hash;
         should_push_state = false;
