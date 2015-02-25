@@ -55,6 +55,10 @@ h2 {
     font-weight: 300;
 }
 
+body > aside h2 {
+    font-size: 22.5pt;
+}
+
 h3, h4, h5, h6 {
     font-size: inherit;
     font-weight: 400;

@@ -136,6 +136,10 @@ h2::before {
     content: "";
 }
 
+body > aside h2 {
+    line-height: 27pt;
+}
+
 @media print {
     h2::before {
         content: none;
