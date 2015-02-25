@@ -50,7 +50,7 @@ body > aside {
     margin: 0;
     padding: 15pt;
     width: 165pt;
-    min-width: calc(50% - 180pt);
+    min-width: calc(50% - 195pt);
     max-height: calc(50% - 36pt);
     overflow: auto;
 }
@@ -77,7 +77,7 @@ body > nav {
     margin: 0;
     padding: 15pt;
     width: 165pt;
-    min-width: calc(50% - 180pt);
+    min-width: calc(50% - 195pt);
     max-height: calc(100% - 72pt);
     overflow: auto;
 }
