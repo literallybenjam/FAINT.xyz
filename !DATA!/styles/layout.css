@@ -47,8 +47,8 @@ body > aside {
     position: fixed;
     left: 0;
     top: 72pt;
-    margin: 15pt;
-    padding: 0;
+    margin: 0;
+    padding: 15pt;
     width: 150pt;
     min-width: calc(50% - 210pt);
     max-height: calc(50% - 36pt);
@@ -78,8 +78,8 @@ body > nav {
     position: fixed;
     left: 0;
     bottom: 0;
-    margin: 15pt;
-    padding: 0;
+    margin: 0;
+    padding: 15pt;
     width: 150pt;
     min-width: calc(50% - 210pt);
     max-height: calc(100% - 72pt);
