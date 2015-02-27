@@ -1,4 +1,5 @@
 /* jslint asi:true, browser:true */
+/* global CSSRule */
 
 var current_scroll_source = null;
 var current_scroll_element = null;
@@ -70,7 +71,7 @@ function readStyleSheet(ss) {
     if (!ss.cssRules) return;
     for (i = 0; i < ss.cssRules.length; i++) {
         if (ss.cssRules.item(i).type != CSSRule.IMPORT_RULE) s += ss.cssRules.item(i).cssText;
-        else s += readStyleSheet(ss.cssRules.item(i).styleSheet);
+        else if (ss.cssRules.item(i).href.substr(0, window.location.origin) === window.location.origin) s += readStyleSheet(ss.cssRules.item(i).styleSheet);
     }
     return s;
 }
