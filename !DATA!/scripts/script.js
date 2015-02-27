@@ -70,6 +70,7 @@ function readStyleSheet(ss) {
     var s = "";
     if (!ss.cssRules) return;
     for (i = 0; i < ss.cssRules.length; i++) {
+        console.log(ss.cssRules.item(i).cssText);
         if (ss.cssRules.item(i).type != CSSRule.IMPORT_RULE) s += ss.cssRules.item(i).cssText;
         else if (ss.cssRules.item(i).href.substr(0, window.location.origin) === window.location.origin) s += readStyleSheet(ss.cssRules.item(i).styleSheet);
     }
