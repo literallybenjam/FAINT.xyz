@@ -64,6 +64,26 @@ function checkLinks() {
     }
 }
 
+function readStyleSheet(ss) {
+    var i;
+    var s = "";
+    if (!ss.cssRules) return;
+    for (i = 0; i < ss.cssRules.length; i++) {
+        if (ss.cssRules.item(i).type != CSSRule.IMPORT_RULE) s += ss.cssRules.item(i).cssText;
+        else s += readStyleSheet(ss.cssRules.item(i).styleSheet);
+    }
+    return s;
+}
+
+function getCSS() {
+    var i;
+    var s = "";
+    for (i = 0; i < document.styleSheets.length; i++) {
+        s += readStyleSheet(document.styleSheets.item(i));
+    }
+    return s;
+}
+
 function exportNode(node) {
     var s = "";
     var i;
@@ -257,7 +277,7 @@ function navInit() {
 function exportInit() {
     for (var i = 0; i < document.getElementsByTagName("ARTICLE").length; i++) {
         var footer = document.createElement("FOOTER");
-        footer.innerHTML = '<a href="data:text/plain;charset=utf-8,' + encodeURIComponent(exportNode(document.getElementsByTagName("ARTICLE").item(0)).trim()) + '" target="_blank">download this article</a>';
+        footer.innerHTML = 'download this article: <a href="data:text/plain;charset=utf-8,' + encodeURIComponent(exportNode(document.getElementsByTagName("ARTICLE").item(0)).trim()) + '" target="_blank">plain text</a>';
         document.getElementsByTagName("ARTICLE").item(0).appendChild(footer);
     }
     document.styleSheets.item(0).insertRule("@media print{article > footer:last-child {display: none;}}", document.styleSheets.item(0).cssRules.length);
