@@ -299,8 +299,8 @@ function exportInit() {
 }
 
 function init() {
-    exportInit();
     checkLinks();
+    exportInit();
     navInit();
     var hashLinks = document.querySelectorAll('a[href^="#"]');
     for (var i = 0; i < hashLinks.length; i++) {
