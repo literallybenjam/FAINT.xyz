@@ -94,7 +94,7 @@ function getHTML() {
                 break;
         }
     }
-    s += "   </head>\n    " + document.body.outerHTML + "\n</html>";
+    s += "    </head>\n    " + document.body.outerHTML + "\n</html>";
     return s;
 }
 
