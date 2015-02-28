@@ -296,7 +296,7 @@ function navInit() {
 }
 
 function exportInit() {
-    if (document.documentElement.dataset.noDownload || !document.getElementsByTagName("MAIN")) return;
+    if (document.documentElement.dataset.noDownload !== undefined || !document.getElementsByTagName("MAIN")) return;
     var plaintext = exportNode(document.getElementsByTagName("MAIN").item(0)).trim()
     var html = getHTML();
     var footer = document.createElement("FOOTER");
