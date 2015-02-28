@@ -76,12 +76,25 @@ function readStyleSheet(ss) {
     return s;
 }
 
-function getCSS() {
+function getHTML() {
     var i;
-    var s = "";
-    for (i = 0; i < document.styleSheets.length; i++) {
-        s += readStyleSheet(document.styleSheets.item(i));
+    var s = "<!DOCTYPE html>\n<!--  " + document.title + ", originally located at " + window.location.href + '  -->\n<html lang="' + document.documentElement.lang + '">\n    <head>\n';
+    for (i = 0; i < document.head.children.length; i++) {
+        switch (document.head.children.item(i).tagName) {
+            case "LINK":
+                if (document.head.children.item(i).type == "text/css") s += "        <style>" + readStyleSheet(document.head.children.item(i).sheet) + "</style>\n";
+                break;
+
+            case "SCRIPT":
+                s += "        <!--  script omitted  -->\n";
+                break;
+
+            default:
+                s += "        " + document.head.children.item(i).outerHTML + "\n";
+                break;
+        }
     }
+    s += "   </head>\n    " + document.body.outerHTML + "\n</html>";
     return s;
 }
 
@@ -276,12 +289,13 @@ function navInit() {
 }
 
 function exportInit() {
-    for (var i = 0; i < document.getElementsByTagName("ARTICLE").length; i++) {
-        var footer = document.createElement("FOOTER");
-        footer.innerHTML = 'download this article: <a href="data:text/plain;charset=utf-8,' + encodeURIComponent(exportNode(document.getElementsByTagName("ARTICLE").item(0)).trim()) + '" target="_blank">plain text</a>';
-        document.getElementsByTagName("ARTICLE").item(0).appendChild(footer);
-    }
-    document.styleSheets.item(0).insertRule("@media print{article > footer:last-child {display: none;}}", document.styleSheets.item(0).cssRules.length);
+    if (!document.getElementsByTagName("MAIN")) return;
+    var plaintext = exportNode(document.getElementsByTagName("MAIN").item(0)).trim()
+    var html = getHTML();
+    var footer = document.createElement("FOOTER");
+    footer.innerHTML = 'download: <a href="data:text/plain;charset=utf-8,' + encodeURIComponent(plaintext) + '" target="_blank">plain text</a> / <a href="data:text/html;charset=utf-8,' + encodeURIComponent(html) + '" target="_blank">html</a>';
+    document.getElementsByTagName("MAIN").item(0).appendChild(footer);
+    document.styleSheets.item(0).insertRule("@media print{main > footer:last-child {display: none;}}", document.styleSheets.item(0).cssRules.length);
 }
 
 function init() {
