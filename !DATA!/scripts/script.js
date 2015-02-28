@@ -67,13 +67,20 @@ function checkLinks() {
 
 function readStyleSheet(ss) {
     var i;
-    var s = "";
+    var styles = "";
+    var imports = "";
     if (!ss.cssRules) return;
     for (i = 0; i < ss.cssRules.length; i++) {
-        if (ss.cssRules.item(i).type === CSSRule.IMPORT_RULE && (ss.cssRules.item(i).href.indexOf(":") === -1 || ss.cssRules.item(i).href.substr(0, window.location.origin) === window.location.origin)) s += readStyleSheet(ss.cssRules.item(i).styleSheet);
-        else s += ss.cssRules.item(i).cssText;
+        if (ss.cssRules.item(i).type === CSSRule.IMPORT_RULE) {
+            if (ss.cssRules.item(i).href.indexOf(":") === -1 || ss.cssRules.item(i).href.substr(0, window.location.origin) === window.location.origin) {
+                styles += readStyleSheet(ss.cssRules.item(i).styleSheet).styles;
+                imports += readStyleSheet(ss.cssRules.item(i).styleSheet).imports;
+            }
+            else imports += ss.cssRules.item(i).cssText;
+        }
+        else styles += ss.cssRules.item(i).cssText;
     }
-    return s;
+    return {styles: styles, imports: imports};
 }
 
 function getHTML() {
@@ -82,7 +89,7 @@ function getHTML() {
     for (i = 0; i < document.head.children.length; i++) {
         switch (document.head.children.item(i).tagName) {
             case "LINK":
-                if (document.head.children.item(i).type == "text/css") s += "        <style>" + readStyleSheet(document.head.children.item(i).sheet) + "</style>\n";
+                if (document.head.children.item(i).type == "text/css") s += "        <style>" + readStyleSheet(document.head.children.item(i).sheet).imports + readStyleSheet(document.head.children.item(i).sheet).styles + "</style>\n";
                 break;
 
             case "SCRIPT":
