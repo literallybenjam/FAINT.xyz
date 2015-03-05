@@ -288,9 +288,15 @@ function navInit() {
     var walker = document.createTreeWalker(document.getElementsByTagName("MAIN").item(0), NodeFilter.SHOW_ELEMENT, function(node) {
         if (node.nodeName.toUpperCase() === "SECTION") return NodeFilter.FILTER_ACCEPT; else return NodeFilter.FILTER_SKIP;
     });
+    var nav;
     if (walker.firstChild()) {
-        var nav = document.createElement("NAV");
+        nav = document.createElement("NAV");
         nav.innerHTML = navWalk(walker) + '<hr><a href="/">&lt;-- back to <u>FAINT.xyz</u></a>';
+        document.body.appendChild(nav);
+    }
+    else {
+        nav = document.createElement("NAV");
+        nav.innerHTML = '<a href="/">&lt;-- back to <u>FAINT.xyz</u></a>';
         document.body.appendChild(nav);
     }
 }
