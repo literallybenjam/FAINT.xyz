@@ -291,7 +291,7 @@ function navInit() {
     var nav;
     if (walker.firstChild()) {
         nav = document.createElement("NAV");
-        nav.innerHTML = navWalk(walker) + '<hr><a href="/">&lt;-- back to <u>FAINT.xyz</u></a>';
+        nav.innerHTML = navWalk(walker) + '<hr><a href="/"><u>FAINT.xyz</u></a>';
         document.body.appendChild(nav);
     }
     else {
