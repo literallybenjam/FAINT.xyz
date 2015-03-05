@@ -59,7 +59,7 @@ header {
     margin: 18pt 0;
 }
 
-main > header {
+main > header, article > header {
     display: block;
     margin: 0 0 18pt;
     border-bottom: 1pt dashed;
