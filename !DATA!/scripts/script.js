@@ -296,7 +296,7 @@ function navInit() {
     }
     else {
         nav = document.createElement("NAV");
-        nav.innerHTML = '<a href="/">&lt;-- back to <u>FAINT.xyz</u></a>';
+        nav.innerHTML = '<a href="/"><u>FAINT.xyz</u></a>';
         document.body.appendChild(nav);
     }
 }
