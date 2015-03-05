@@ -288,12 +288,15 @@ footer h3 + p, footer p + p {
 
 /*  PHRASING  */
 
-main > nav > a[href] {
+nav > a[href] {
     display: block;
     position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
-main > nav > a[href]::before {
+nav > a[href]::before {
     display: block;
     position: absolute;
     top: 0;

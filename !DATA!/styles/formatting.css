@@ -238,14 +238,24 @@ a[href] {
 
 }
 
-header a[href], nav a[href] {
+header a[href] {
     border: none;
     text-decoration: none;
 }
 
-main > nav > a[href]::before {
+nav > a[href] {
+    border: none;
+    text-decoration: none;
+    text-align: center;
+}
+
+nav > a[href]::before {
     transition: border-color .5s;
     content: "";
+}
+
+body > nav > a[href]::before {
+    content: none;
 }
 
 b::before {
