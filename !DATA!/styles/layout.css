@@ -70,6 +70,10 @@ main {
     max-width: 510pt;
 }
 
+footer {
+    margin: 18pt 0;
+}
+
 main > footer {
     display: block;
     margin: 18pt 0 0;
