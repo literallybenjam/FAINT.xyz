@@ -78,7 +78,7 @@ footer {
     margin: 18pt 0;
 }
 
-main > footer {
+main > footer, article > footer {
     display: block;
     margin: 18pt 0 0;
     border-top: 1pt dashed;
