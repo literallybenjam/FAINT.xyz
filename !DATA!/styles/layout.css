@@ -56,6 +56,10 @@ body > aside {
 }
 
 header {
+    margin: 18pt 0;
+}
+
+main > header {
     display: block;
     margin: 0 0 18pt;
     border-bottom: 1pt dashed;
@@ -206,6 +210,10 @@ h2::before {
     border-bottom: 1pt solid;
     height: 0;
     z-index: -1;
+}
+
+header h2 {
+    margin: auto;
 }
 
 body > aside h2 {
