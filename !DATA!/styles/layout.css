@@ -42,6 +42,10 @@ main {
     max-width: 510pt;
 }
 
+aside {
+    margin: 18pt 0;
+}
+
 body > aside {
     display: block;
     position: fixed;
@@ -270,7 +274,7 @@ blockquote p::before, p + p::before {
     right: 100%;
 }
 
-figure h3 + p, figure p + p {
+aside h3 + p, aside p + p, figure h3 + p, figure p + p {
     margin-top: 18pt;
 }
 

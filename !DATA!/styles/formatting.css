@@ -187,11 +187,11 @@ header p + p::before {
     content: none;
 }
 
-figure h3 + p, figure p + p {
+aside h3 + p, aside p + p, figure h3 + p, figure p + p {
     text-indent: 0;
 }
 
-figure p + p::before {
+aside p + p::before, figure p + p::before {
     content: none;
 }
 
