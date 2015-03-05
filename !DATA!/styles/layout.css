@@ -20,28 +20,6 @@ body {
 
 /*  SECTIONING  */
 
-article > footer {
-    display: block;
-    margin: 18pt 0 0;
-    border-top: 1pt dashed;
-    padding: 17pt 0 0;
-}
-
-header {
-    display: block;
-    margin: 0 0 18pt;
-    border-bottom: 1pt dashed;
-    padding: 0 0 17pt;
-}
-
-main {
-    display: block;
-    position: relative;
-    margin: auto;
-    padding: 15pt;
-    max-width: 510pt;
-}
-
 aside {
     margin: 18pt 0;
 }
@@ -75,6 +53,28 @@ body > aside {
     body > aside {
         display: none;
     }
+}
+
+header {
+    display: block;
+    margin: 0 0 18pt;
+    border-bottom: 1pt dashed;
+    padding: 0 0 17pt;
+}
+
+main {
+    display: block;
+    position: relative;
+    margin: auto;
+    padding: 15pt;
+    max-width: 510pt;
+}
+
+main > footer {
+    display: block;
+    margin: 18pt 0 0;
+    border-top: 1pt dashed;
+    padding: 17pt 0 0;
 }
 
 body > nav {
