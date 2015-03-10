@@ -114,9 +114,8 @@ function init() {
     checkLinks();
 
     //  export-js
-    var footer = document.createElement("FOOTER");
-    Export.init(footer);
-    document.getElementsByTagName("MAIN").item(0).appendChild(footer);
+    document.getElementsByTagName("MAIN").item(0).appendChild(
+    Export.init(document.createElement("FOOTER")));
     document.styleSheets.item(0).insertRule("@media print{main > footer:last-child {display: none;}}", document.styleSheets.item(0).cssRules.length);
 
     navInit();
