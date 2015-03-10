@@ -10,7 +10,8 @@ var current_scroll_hash = "#";
 var should_push_state = false;
 
 var scripts = [
-    "http://home.faint.xyz/!DATA!/scripts/export-js/export.js"
+    "http://home.faint.xyz/!DATA!/scripts/export-js/export.js",
+    "http://home.faint.xyz/!DATA!/scripts/yt-seek/yt-seek.js"
 ];
 var scripts_loaded = 0;
 
@@ -143,7 +144,7 @@ function loadScripts() {
         tag.addEventListener("load", scriptLoaded, false);
         tag.type = "text/javascript";
         tag.src = scripts[i];
-        document.head.insertBefore(tag, document.scripts.item(0));
+        document.scripts.item(0).parentNode.insertBefore(tag, document.scripts.item(0));
     }
 }
 
