@@ -9,11 +9,10 @@ var current_scroll_velocity = 0;
 var current_scroll_hash = "#";
 var should_push_state = false;
 
-var scripts = {
-    "export-js": 1
-}
+var scripts = [
+    "/!DATA!/scripts/export-js/export.js"
+];
 var scripts_loaded = 0;
-var MAX_SCRIPTS = 1;
 
 function scroll() {
     var max_scroll = window.scrollMaxY;
@@ -127,21 +126,26 @@ function init() {
     }
 
     navHashFromLocation();
+    window.addEventListener("popstate", navHashFromLocation, false);
 
 }
 
 function scriptLoaded() {
-    scripts_loaded &= scripts[this.dataset.name];
-    if (scripts_loaded & MAX_SCRIPTS === MAX_SCRIPTS) init();
+    scripts_loaded &= (1 << scripts.indexOf(this.src));
+    if (scripts_loaded === ~(~0 << scripts.length)) init();
 }
 
 function loadScripts() {
-    var tag = document.createElement('script');
-    tag.dataset.name = "export-js";
-    tag.src = "/!DATA!/scripts/export-js/export.js";
-    tag.addEventListener("load", scriptLoaded, false);
-    document.head.appendChild(tag, document.head.firstElementChild);
+    var i;
+    var tag;
+    for (i = 0; i < scripts.length; i++) {
+        tag = document.createElement('script');
+        tag.type = "text/javascript";
+        tag.async = true;
+        tag.src = scripts[i];
+        tag.addEventListener("load", scriptLoaded, false);
+        document.head.insertBefore(tag, document.currentScript);
+    }
 }
 
-document.addEventListener("DOMContentLoaded", loadScripts, false);
-window.addEventListener("popstate", navHashFromLocation, false);
+loadScripts();
