@@ -143,8 +143,8 @@ function loadScripts() {
         tag.addEventListener("load", scriptLoaded, false);
         tag.type = "text/javascript";
         tag.src = scripts[i];
-        document.head.insertBefore(tag, document.currentScript);
+        document.head.insertBefore(tag, document.scripts.item(0));
     }
 }
 
-loadScripts();
+document.addEventListener("DOMContentLoaded", loadScripts, false);
