@@ -1,6 +1,7 @@
 /* jslint asi:true, browser:true */
 /* global CSSRule */
 /* global Export */
+/* global YT_Seek */
 
 var current_scroll_source = null;
 var current_scroll_element = null;
@@ -28,7 +29,6 @@ function scroll() {
     else {
         window.scrollBy(0, current_scroll_target - current_scroll_location);
         current_scroll_velocity = 0;
-        current_scroll_element.dispatchEvent(new CustomEvent("scrolledTo", {detail: {source: current_scroll_source}}));
         if (should_push_state) window.history.pushState(null, "", current_scroll_hash);
     }
 }
