@@ -129,6 +129,8 @@ function init() {
     navHashFromLocation();
     window.addEventListener("popstate", navHashFromLocation, false);
 
+    YT_Seek.init();
+
 }
 
 function scriptLoaded() {
