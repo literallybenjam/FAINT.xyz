@@ -10,7 +10,7 @@ var current_scroll_hash = "#";
 var should_push_state = false;
 
 var scripts = [
-    "/!DATA!/scripts/export-js/export.js"
+    "http://home.faint.xyz/!DATA!/scripts/export-js/export.js"
 ];
 var scripts_loaded = 0;
 
