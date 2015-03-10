@@ -131,7 +131,7 @@ function init() {
 }
 
 function scriptLoaded() {
-    scripts_loaded &= (1 << scripts.indexOf(this.src));
+    scripts_loaded |= (1 << scripts.indexOf(this.src));
     if (scripts_loaded === ~(~0 << scripts.length)) init();
 }
 
@@ -140,10 +140,9 @@ function loadScripts() {
     var tag;
     for (i = 0; i < scripts.length; i++) {
         tag = document.createElement('script');
-        tag.type = "text/javascript";
-        tag.async = true;
-        tag.src = scripts[i];
         tag.addEventListener("load", scriptLoaded, false);
+        tag.type = "text/javascript";
+        tag.src = scripts[i];
         document.head.insertBefore(tag, document.currentScript);
     }
 }
