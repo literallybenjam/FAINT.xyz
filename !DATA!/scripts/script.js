@@ -130,7 +130,7 @@ function init() {
 
 }
 
-function scriptLoaded(e) {
+function scriptLoaded() {
     scripts_loaded &= scripts[this.dataset.name];
     if (scripts_loaded & MAX_SCRIPTS === MAX_SCRIPTS) init();
 }
@@ -139,7 +139,7 @@ function loadScripts() {
     var tag = document.createElement('script');
     tag.dataset.name = "export-js";
     tag.src = "/!DATA!/scripts/export-js/export.js";
-    tag.addEventListener("loaded", scriptLoaded, false);
+    tag.addEventListener("load", scriptLoaded, false);
     document.head.appendChild(tag, document.head.firstElementChild);
 }
 
