@@ -10,12 +10,6 @@ var current_scroll_velocity = 0;
 var current_scroll_hash = "#";
 var should_push_state = false;
 
-var scripts = [
-    "http://home.faint.xyz/!DATA!/scripts/export-js/export.js",
-    "http://home.faint.xyz/!DATA!/scripts/yt-seek/yt-seek.js"
-];
-var scripts_loaded = 0;
-
 function scroll() {
     var max_scroll = window.scrollMaxY;
     if (max_scroll === undefined) max_scroll = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -132,21 +126,4 @@ function init() {
 
 }
 
-function scriptLoaded() {
-    scripts_loaded |= (1 << scripts.indexOf(this.src));
-    if (scripts_loaded === ~(~0 << scripts.length)) init();
-}
-
-function loadScripts() {
-    var i;
-    var tag;
-    for (i = 0; i < scripts.length; i++) {
-        tag = document.createElement('script');
-        tag.addEventListener("load", scriptLoaded, false);
-        tag.type = "text/javascript";
-        tag.src = scripts[i];
-        document.scripts.item(0).parentNode.insertBefore(tag, document.scripts.item(0));
-    }
-}
-
-document.addEventListener("DOMContentLoaded", loadScripts, false);
+document.addEventListener("load-complete", init, false);

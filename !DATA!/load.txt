@@ -1,0 +1,3 @@
+http://home.faint.xyz/scripts/export-js/export.js
+http://home.faint.xyz/scripts/yt-seek/yt-seek.js
+http://home.faint.xyz/scripts/script.js
